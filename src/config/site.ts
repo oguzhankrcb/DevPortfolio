@@ -6,6 +6,7 @@ const siteConfig = {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
     twitter: "",
+    medium: "https://medium.com"
   },
 
   contact: {
