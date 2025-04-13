@@ -70,9 +70,9 @@ export default function Footer({ isOdd = true }: FooterProps) {
               <li>
                 <Link href="#projects" className="text-gray-300 hover:text-white transition-colors">Projects</Link>
               </li>
-              {footerConfig.links.map((link, index) => (
+              {footerConfig.links && Array.isArray(footerConfig.links) && footerConfig.links.map((link, index) => (
                 <li key={index}>
-                  {link.external ? (
+                  {link?.external ? (
                     <a
                       href={link.url}
                       target="_blank"
