@@ -74,12 +74,12 @@ export default function ProjectsSection({ isOdd = false }: ProjectsSectionProps)
         </div>
 
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-white dark:bg-slate-800 p-1 rounded-lg shadow-md">
+          <div className="flex flex-wrap md:flex-nowrap justify-center bg-white dark:bg-slate-800 p-1.5 rounded-lg shadow-md w-full max-w-md md:max-w-2xl lg:max-w-3xl mx-auto">
             {categories.map(category => (
               <button
                 key={category.id}
                 onClick={() => setFilter(category.id)}
-                className={`px-5 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`md:flex-auto min-w-fit mx-1 my-1 px-3 sm:px-4 md:px-5 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap ${
                   filter === category.id
                     ? 'bg-blue-500 text-white'
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700'
