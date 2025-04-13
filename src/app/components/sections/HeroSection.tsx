@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { heroConfig, siteConfig } from '@/config';
+import profileImage from '../../../../public/images/profile.png'
 
 interface HeroSectionProps {
   isOdd?: boolean;
@@ -13,15 +14,15 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
   const [typedText, setTypedText] = useState('');
   const fullText = heroConfig.title;
   const typingSpeed = 100;
-  
+
   useEffect(() => {
     let currentCharIndex = 0;
     let typingInterval: NodeJS.Timeout;
     let pauseTimeout: NodeJS.Timeout;
-    
+
     const startTyping = () => {
       currentCharIndex = 0;
-      
+
       typingInterval = setInterval(() => {
         if (currentCharIndex <= fullText.length) {
           setTypedText(fullText.slice(0, currentCharIndex));
@@ -35,7 +36,7 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
         }
       }, typingSpeed);
     };
-    
+
     startTyping();
 
     return () => {
@@ -64,12 +65,12 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
                 {heroConfig.ctaText}
               </Link>
             </div>
-            
+
             <div className="mt-12 flex items-center gap-6">
               {siteConfig.social.github && (
-                <a 
+                <a
                   href={siteConfig.social.github}
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
                   aria-label="GitHub"
@@ -80,9 +81,9 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
                 </a>
               )}
               {siteConfig.social.linkedin && (
-                <a 
+                <a
                   href={siteConfig.social.linkedin}
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
                   aria-label="LinkedIn"
@@ -93,9 +94,9 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
                 </a>
               )}
               {siteConfig.social.twitter && (
-                <a 
+                <a
                   href={siteConfig.social.twitter}
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
                   aria-label="Twitter"
@@ -107,11 +108,11 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
               )}
             </div>
           </div>
-          
-          {siteConfig.heroProfileImage && (<div className="order-1 lg:order-2 flex justify-center">
+
+          {profileImage && (<div className="order-1 lg:order-2 flex justify-center">
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
               <Image
-                src={siteConfig.heroProfileImage}
+                src={profileImage}
                 alt="Developer"
                 fill
                 sizes="(max-width: 768px) 18rem, 24rem"
