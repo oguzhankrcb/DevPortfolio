@@ -4,6 +4,8 @@ export const footerConfig = {
     startYear: 2025
   },
 
+  links: null,
+
   credits: {
     show: false,
     text: "Made with ❤️ using Next.js and Tailwind CSS"
