@@ -5,48 +5,63 @@ export const experienceConfig = {
   experiences: [
     {
       id: 1,
-      position: 'Senior Frontend Developer',
-      company: 'Tech Innovations Inc.',
-      location: 'San Francisco, CA',
-      period: 'Jan 2021 - Present',
-      description: 'Led the frontend development team in creating responsive and accessible web applications for enterprise clients. Implemented modern React architectures and optimized performance.',
+      position: 'Backend Developer',
+      company: 'Beyn Technology',
+      location: 'İstanbul, Türkiye',
+      period: '2023 - Present',
+      description: 'Working as a backend developer using PHP with Symfony Framework to develop enterprise-level applications.',
       achievements: [
-        'Redesigned the company\'s flagship product, improving page load speed by 40%',
-        'Mentored junior developers and established frontend best practices',
-        'Introduced TypeScript and unit testing, reducing production bugs by 30%',
-        'Collaborated with UX designers to create intuitive user interfaces'
+        'Contributed to large-scale enterprise applications',
+        'Implemented robust backend systems with Symfony Framework',
+        'Applied clean code principles and SOLID design patterns',
+        'Worked with continuous integration and delivery pipelines'
       ],
-      technologies: ['React', 'TypeScript', 'Redux', 'Tailwind CSS', 'Jest', 'Webpack']
+      technologies: ['PHP', 'Symfony Framework', 'MySQL', 'Docker', 'Redis', 'ElasticSearch', 'Grafana']
     },
     {
       id: 2,
-      position: 'Frontend Developer',
-      company: 'Digital Solutions Agency',
-      location: 'New York, NY',
-      period: 'Mar 2019 - Dec 2020',
-      description: 'Developed interactive web applications for clients across various industries. Focused on creating responsive designs and implementing frontend functionality.',
+      position: 'Backend Developer',
+      company: 'Tarfin Tarım A.Ş.',
+      location: 'İstanbul, Türkiye',
+      period: '2022 - 2023',
+      description: 'Worked on backend systems with Vue.js in frontend and Laravel in the backend, developing agricultural finance solutions.',
       achievements: [
-        'Built 15+ client websites using modern JavaScript frameworks',
-        'Implemented CI/CD pipelines to streamline deployment processes',
-        'Created reusable component libraries to improve development efficiency',
-        'Optimized web performance for better SEO and user experience'
+        'Developed new features for agricultural finance platform',
+        'Implemented web services and API integrations',
+        'Collaborated with frontend developers on Vue.js components',
+        'Optimized database queries and improved system performance'
       ],
-      technologies: ['JavaScript', 'React', 'SCSS', 'GraphQL', 'Git', 'Figma']
+      technologies: ['PHP', 'Laravel', 'Vue.js 2 & 3', 'MySQL', 'API Integration']
     },
     {
       id: 3,
-      position: 'Web Developer Intern',
-      company: 'StartUp Hub',
-      location: 'Boston, MA',
-      period: 'Jun 2018 - Feb 2019',
-      description: 'Assisted in developing and maintaining websites for startup clients. Gained hands-on experience with frontend technologies and agile development.',
+      position: 'Full Stack Developer',
+      company: 'Mikale Yazılım',
+      location: 'İstanbul, Türkiye',
+      period: '2020 - 2021',
+      description: 'Worked on windows services, web applications and APIs using PHP with Laravel Framework and codeIgniter.',
       achievements: [
-        'Contributed to the development of 5 client websites',
-        'Learned and applied responsive design principles',
-        'Participated in client meetings and requirement gathering',
-        'Collaborated on a team project that won a local hackathon'
+        'Developed QR Menu system for restaurants with cloud capabilities',
+        'Created business management system for SMEs (Mikale Boss)',
+        'Implemented Windows services for various business needs',
+        'Built RESTful APIs for mobile and web application integrations'
       ],
-      technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap']
+      technologies: ['PHP', 'Laravel', 'CodeIgniter', 'Vue.js', 'Web APIs', 'Windows Services']
+    },
+    {
+      id: 4,
+      position: 'Freelance Developer',
+      company: 'Self-employed',
+      location: 'Remote',
+      period: '2015 - 2019',
+      description: 'Made many freelance projects with PHP, Laravel, C# and more, building a diverse portfolio before starting corporate career.',
+      achievements: [
+        'Developed custom software solutions for various clients',
+        'Created automation tools to improve workflow efficiency',
+        'Built desktop applications with C#',
+        'Gained experience in multiple programming languages and platforms'
+      ],
+      technologies: ['PHP', 'Laravel', 'C#', '.NET', 'Game Integration', 'Web Development']
     }
   ]
 };

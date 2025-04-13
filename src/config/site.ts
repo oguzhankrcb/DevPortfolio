@@ -1,19 +1,23 @@
 const siteConfig = {
-  name: "Developer Portfolio",
-  description: "A professional developer portfolio showcasing my skills and projects",
-
+  name: "Oğuzhan Karacabay | Portfolio",
+  description: "Software Engineer specializing in PHP, Laravel, Symfony and Vue.js frameworks with full stack development experience",
+  
   social: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    github: "https://github.com/oguzhankrcb",
+    linkedin: "https://linkedin.com/in/oguzhankrcb",
     twitter: "",
+    instagram: "",
+    medium: "https://oguzhankrcb.medium.com"
   },
-
+  
   contact: {
-    email: "contact@example.com",
-    phone: "+1 (123) 456-7890",
+    email: "oguzhankrcb@gmail.com",
+    phone: "+90 530 736 2704",
   },
+  
+  resumeUrl: "/resume.pdf",
 
-  resumeUrl: "#",
+  heroProfileImage: "/images/profile.jpg",
 
   sections: {
     hero: true,
@@ -21,7 +25,7 @@ const siteConfig = {
     skills: true,
     projects: true,
     experience: true,
-    contact: true,
+    contact: false,
   }
 }
 

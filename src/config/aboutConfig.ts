@@ -3,37 +3,37 @@ export const aboutConfig = {
   subtitle: "Here you will find more information about me, what I do, and my current skills in terms of programming and technology",
   
   mainContent: [
-    "I'm a <strong>Full Stack Web Developer</strong> building robust and scalable web applications that deliver exceptional user experiences.",
-    "I specialize in creating interactive and responsive web solutions using modern JavaScript frameworks and libraries such as React, Next.js, and Node.js.",
-    "I'm passionate about web accessibility, performance optimization, and clean code practices that make products more efficient and maintainable.",
-    "I enjoy collaborating with teams to solve complex problems and continuously learning new technologies to stay at the forefront of web development."
+    "I have been interested in programming since I was 12, I chose this job because it was my childhood dream. I have completed many projects in 10 years as a freelancer and professional developer.",
+    "I started my career with C programming language, then I continued to my way with learning socket programming and assembly language (8086). After that I started to search OOP and dive into the details of programming with C# and continued to follow the paths a professional software developer should follow.",
+    "I have done many projects and works during my university years, like machine learning and image processing with Python. Nowadays I am working with PHP (Laravel, Symfony) and Vue.js.",
+    "I'm passionate about clean code principles, SOLID design, and test-driven development. I enjoy solving complex problems and continuously learning new technologies."
   ],
   
-  ctaText: "Get in touch",
+  ctaText: "Contact Me",
   ctaLink: "#contact",
   
   achievements: [
     {
-      title: "5+ Years Experience",
-      description: "Professional web development experience across multiple industries",
+      title: "8+ Years Experience",
+      description: "Professional development experience across multiple technologies",
       icon: "briefcase",
       color: "blue"
     },
     {
-      title: "20+ Completed Projects",
-      description: "Delivered successful web applications and websites for various clients",
-      icon: "check-badge",
-      color: "green"
-    },
-    {
-      title: "BSc in Computer Science",
-      description: "Strong educational foundation in software engineering principles",
+      title: "BSc in Computer Engineering",
+      description: "Karabük University (2015-2020)",
       icon: "academic-cap",
       color: "purple"
     },
     {
-      title: "Continuous Learner",
-      description: "Regularly completes online courses and stays updated with industry trends",
+      title: "Full Stack Developer",
+      description: "Experience with both backend (PHP, Laravel, Symfony) and frontend (Vue.js) technologies",
+      icon: "check-badge",
+      color: "green"
+    },
+    {
+      title: "English Level 10 Certificate",
+      description: "Wallstreet English certification",
       icon: "light-bulb",
       color: "yellow"
     }

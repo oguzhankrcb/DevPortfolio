@@ -4,71 +4,72 @@ export const projectsConfig = {
   
   categories: [
     { id: 'all', name: 'All' },
-    { id: 'frontend', name: 'Frontend' },
-    { id: 'fullstack', name: 'Full Stack' },
-    { id: 'mobile', name: 'Mobile' }
+    { id: 'laravel', name: 'Laravel' },
+    { id: 'symfony', name: 'Symfony' },
+    { id: 'tool', name: 'Tools & Packages' },
+    { id: 'fullstack', name: 'Full Stack' }
   ],
   
   projects: [
     {
       id: 1,
-      title: 'E-commerce Platform',
-      description: 'A feature-rich e-commerce platform with product management, shopping cart, and payment integration.',
-      image: '/images/projects/project1.jpg', 
-      demoUrl: 'https://demo-project1.com',
-      githubUrl: 'https://github.com/username/project1',
+      title: 'DevPortfolio',
+      description: 'A modern, fully customizable portfolio website built with Next.js and Tailwind CSS, featuring dynamic configuration, dark/light mode, and a modular design system.',
+      image: '/images/projects/devportfolio.jpg', 
+      demoUrl: '#',
+      githubUrl: 'https://github.com/oguzhankrcb/devportfolio',
       category: 'fullstack',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe API']
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React', 'Responsive Design']
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A responsive task management application with drag-and-drop functionality and team collaboration features.',
-      image: '/images/projects/project2.jpg',
-      demoUrl: 'https://demo-project2.com',
-      githubUrl: 'https://github.com/username/project2',
-      category: 'frontend',
-      technologies: ['React', 'Redux', 'Firebase', 'Tailwind CSS']
+      title: 'OTI - One Time Information',
+      description: 'A modern web application designed for secure, one-time information sharing with client-side encryption, self-destruct capabilities, and password protection.',
+      image: '/images/projects/oti.jpg', 
+      demoUrl: '#',
+      githubUrl: 'https://github.com/oguzhankrcb/oti',
+      category: 'fullstack',
+      technologies: ['AdonisJS', 'TypeScript', 'Node.js', 'Redis', 'Client-Side Encryption', 'Vite']
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'An interactive weather dashboard that displays current and forecasted weather data with beautiful visualizations.',
-      image: '/images/projects/project3.jpg',
-      demoUrl: 'https://demo-project3.com',
-      githubUrl: 'https://github.com/username/project3',
-      category: 'frontend',
-      technologies: ['JavaScript', 'Chart.js', 'Weather API', 'CSS3']
+      title: 'Symfony Microservice with gRPC',
+      description: 'A Symfony-based microservice architecture leveraging gRPC for high-performance communication between services. Built with Docker for local development.',
+      image: '/images/projects/symfony-grpc.jpg', 
+      demoUrl: '#',
+      githubUrl: 'https://github.com/oguzhankrcb/symfony-micro-service-with-grpc',
+      category: 'symfony',
+      technologies: ['Symfony', 'gRPC', 'Docker', 'Microservices', 'RoadRunner']
     },
     {
       id: 4,
-      title: 'Social Media App',
-      description: 'A social networking platform with real-time messaging, post sharing, and user authentication.',
-      image: '/images/projects/project4.jpg',
-      demoUrl: 'https://demo-project4.com',
-      githubUrl: 'https://github.com/username/project4',
-      category: 'fullstack',
-      technologies: ['Next.js', 'GraphQL', 'PostgreSQL', 'WebSockets']
+      title: 'DataMigrator Laravel Package',
+      description: 'A PHP/Laravel package that helps you migrate data from one model to another with ease and flexibility.',
+      image: '/images/projects/data-migrator.jpg', 
+      demoUrl: '#',
+      githubUrl: 'https://github.com/oguzhankrcb/DataMigrator',
+      category: 'tool',
+      technologies: ['PHP', 'Laravel', 'Database Migrations']
     },
     {
       id: 5,
-      title: 'Fitness Tracker',
-      description: 'A mobile application for tracking workouts, nutrition, and fitness progress with custom analytics.',
-      image: '/images/projects/project5.jpg',
-      demoUrl: 'https://demo-project5.com',
-      githubUrl: 'https://github.com/username/project5',
-      category: 'mobile',
-      technologies: ['React Native', 'Redux', 'Firebase', 'Expo']
+      title: 'Auto Casting Json Resource',
+      description: 'A package with the ability of automatically casting your JsonResource data using the casting functions you have defined.',
+      image: '/images/projects/json-resource.jpg',
+      demoUrl: '#',
+      githubUrl: 'https://github.com/oguzhankrcb/auto-casting-json-resource',
+      category: 'tool',
+      technologies: ['PHP', 'Laravel', 'JSON Resources', 'API']
     },
     {
       id: 6,
-      title: 'Recipe Finder',
-      description: 'A web application that allows users to search for recipes based on ingredients, dietary restrictions, and cuisine types.',
-      image: '/images/projects/project6.jpg',
-      demoUrl: 'https://demo-project6.com',
-      githubUrl: 'https://github.com/username/project6',
-      category: 'frontend',
-      technologies: ['Vue.js', 'Vuex', 'Recipe API', 'SCSS']
+      title: 'GetirAPI Integration',
+      description: 'Getir API library integration for our restaurant programs, allowing seamless connection to the food delivery platform.',
+      image: '/images/projects/getir-api.jpg',
+      demoUrl: '#',
+      githubUrl: 'https://github.com/oguzhankrcb/GetirAPI',
+      category: 'laravel',
+      technologies: ['PHP', 'Laravel', 'API Integration', 'Restaurant Management']
     }
   ]
 };
