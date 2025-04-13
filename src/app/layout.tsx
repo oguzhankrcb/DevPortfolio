@@ -26,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="title" content={metadata.title} />
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords.join(", ")} />
+        {metadata.title && <meta name="title" content={metadata.title.toString()} />}
+        {metadata.description && <meta name="description" content={metadata.description.toString()} />}
+        {metadata.keywords && Array.isArray(metadata.keywords) && (
+          <meta name="keywords" content={metadata.keywords.join(", ")} />
+        )}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
