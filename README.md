@@ -3,14 +3,13 @@
 ![image](https://github.com/user-attachments/assets/43aceb34-41e9-433a-9bef-3297cb564df7)
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-38bdf8.svg)](https://tailwindcss.com/)
 
 ## ✨ Features
 
 DevPortfolio is a modern, fully customizable portfolio website built with Next.js and Tailwind CSS. It's designed to help developers showcase their skills, projects, and experience in a clean and professional way.
 
-- 🌓 **Dark/Light Mode** - Seamless theme switching for optimal viewing experience
 - 📱 **Fully Responsive** - Perfect display on all devices (mobile, tablet, desktop)
 - ⚡ **Performance Optimized** - Lightning-fast loading with Next.js optimizations
 - 🧩 **Modular Design** - Easy to add, remove, or rearrange sections
@@ -23,7 +22,7 @@ DevPortfolio is a modern, fully customizable portfolio website built with Next.j
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 14](https://nextjs.org/)
+- **Framework**: [Next.js 15](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Animation**: Custom React hooks
@@ -121,6 +120,7 @@ Edit the corresponding config file to update each section:
 - `projectsConfig.ts` - Your portfolio projects
 - `experienceConfig.ts` - Work history
 - `contactConfig.ts` - Contact form and details
+- `footerConfig.ts` - Footer text and links
 
 ### 3. Styling
 
@@ -150,4 +150,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🚧 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/username/devportfolio/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/oguzhankrcb/DevPortfolio/issues).
