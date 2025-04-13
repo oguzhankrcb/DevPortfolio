@@ -110,14 +110,15 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
           </div>
 
           {profileImage && (<div className="order-1 lg:order-2 flex justify-center">
-            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+            <div className="relative w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
               <Image
                 src={profileImage}
                 alt="Developer"
                 fill
-                sizes="(max-width: 768px) 18rem, 24rem"
+                sizes="(max-width: 768px) 15rem, 20rem"
                 priority
-                className="object-cover"
+                className="object-cover object-center"
+                style={{ objectPosition: 'center' }}
               />
             </div>
           </div>)}

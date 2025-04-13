@@ -1,6 +1,6 @@
 # 🚀 DevPortfolio - Modern Developer Portfolio
 
-![DevPortfolio Banner](https://via.placeholder.com/1200x600/0077FF/FFFFFF?text=DevPortfolio)
+![image](https://github.com/user-attachments/assets/43aceb34-41e9-433a-9bef-3297cb564df7)
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
