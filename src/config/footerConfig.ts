@@ -1,10 +1,16 @@
+export interface FooterLink {
+  text: string;
+  url: string;
+  external: boolean;
+}
+
 export const footerConfig = {
   copyright: {
     text: "© 2025 Karacabay.com All rights reserved.",
     startYear: 2025
   },
 
-  links: null,
+  links: [] as FooterLink[],
 
   credits: {
     show: false,
