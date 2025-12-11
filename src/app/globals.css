@@ -3,24 +3,41 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 248, 250, 252;
+  /* Design Tokens - Light Theme (Default) */
+  --foreground-rgb: 30, 41, 59; /* Slate 800 - Softer than pure black */
+  --background-start-rgb: 250, 250, 255; /* Very subtle cool white */
   --background-end-rgb: 255, 255, 255;
-  --primary: 59, 130, 246;
-  --secondary: 79, 70, 229;
-  --accent: 244, 63, 94;
+  
+  /* Primary Colors - Professional Blue/Indigo Palette */
+  --primary: 59, 130, 246;   /* Blue 500 */
+  --secondary: 79, 70, 229;  /* Indigo 600 */
+  --accent: 236, 72, 153;    /* Pink 500 */
+  
+  /* Glassmorphism Tokens */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: rgba(148, 163, 184, 0.1); 
+  --card-border: rgba(226, 232, 240, 0.8); /* Slate 200 */
+
+  /* Spacing & Layout */
+  --section-spacing: 6rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 13, 17, 23;
-    --background-end-rgb: 30, 41, 59;
+    --foreground-rgb: 248, 250, 252;
+    --background-start-rgb: 15, 23, 42; /* Slate 900 */
+    --background-end-rgb: 2, 6, 23;     /* Slate 950 */
+    
+    --glass-bg: rgba(30, 41, 59, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: rgba(0, 0, 0, 0.4);
+    --card-border: rgba(255, 255, 255, 0.05);
   }
 }
 
-html, body {
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -32,32 +49,180 @@ body {
   );
   min-height: 100vh;
   position: relative;
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sophisticated Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.02em; 
+}
+
+/* Background Effects */
+.bg-mesh {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(79, 70, 229, 0.08), transparent 25%);
+  pointer-events: none;
+}
+
+/* Subtle Blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: -1;
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(59, 130, 246, 0.15);
+  top: -100px;
+  right: -50px;
+}
+
+.blob-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(79, 70, 229, 0.12);
+  bottom: 0;
+  left: -50px;
+  animation-delay: -5s;
 }
 
 @layer components {
+  /* Modern Card - Refined */
+  .modern-card {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-500;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    box-shadow: 
+      0 4px 6px -1px var(--glass-shadow), 
+      0 2px 4px -1px var(--glass-shadow);
+  }
+
+  .modern-card:hover {
+    @apply -translate-y-1;
+    box-shadow: 
+      0 20px 25px -5px var(--glass-shadow), 
+      0 10px 10px -5px var(--glass-shadow);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  .glass-card {
+    @apply modern-card; /* Alias for compatibility */
+  }
+
+  /* Typography Utilities */
+  .heading-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight;
+  }
+
+  .subheading {
+    @apply text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-light;
+  }
+
+  /* Buttons - Polished */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 relative overflow-hidden;
   }
+
   .btn-primary {
-    @apply bg-blue-500 hover:bg-blue-600 text-white;
+    @apply bg-blue-600 text-white shadow-lg shadow-blue-500/25 border border-transparent;
   }
+
+  .btn-primary:hover {
+    @apply bg-blue-700 -translate-y-0.5 shadow-blue-500/40;
+  }
+  
+  .btn-primary:active {
+    @apply translate-y-0 shadow-sm;
+  }
+
   .btn-secondary {
-    @apply bg-indigo-600 hover:bg-indigo-700 text-white;
+    @apply bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-sm;
   }
-  .btn-outline {
-    @apply border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white;
+
+  .btn-secondary:hover {
+    @apply bg-slate-50 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white -translate-y-0.5;
   }
+
+  /* Utilities */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
   .section {
-    @apply py-16 md:py-24;
+    @apply py-24 md:py-32 relative;
   }
-  .heading {
-    @apply text-3xl md:text-4xl font-bold mb-6;
+
+  .section-alt {
+    @apply relative;
   }
-  .subheading {
-    @apply text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-3xl;
+  
+  .section-alt::before {
+    content: '';
+    @apply absolute inset-0 -z-20 bg-slate-50/50 dark:bg-slate-900/50 skew-y-1 scale-110;
   }
+
+  /* Gradient Text Utility */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 font-bold;
+  }
+  
+  /* Input Fields */
+  .input-modern {
+    @apply w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all duration-300 backdrop-blur-sm;
+  }
+
+  /* Social Icons */
+  .social-icon {
+    @apply w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300;
+  }
+  
+  /* Skill Bar */
+  .skill-bar {
+    @apply h-2.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden;
+  }
+  
+  /* Tags */
+  .tag {
+    @apply px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800/50;
+  }
+  
+  /* Navigation Link */
+  .nav-link {
+    @apply text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200;
+  }
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
 }
