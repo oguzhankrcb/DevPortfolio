@@ -11,7 +11,6 @@ const siteConfig = {
 
   contact: {
     email: "oguzhankrcb@gmail.com",
-    phone: "+1(450)4089896 (Whatsapp)",
   },
 
   resumeUrl: "/resume.pdf",

@@ -6,17 +6,17 @@ export const experienceConfig = {
     {
       id: 1,
       position: 'Backend Developer',
-      company: 'Beyn Technology',
+      company: 'Xpress Tech',
       location: 'İstanbul, Türkiye',
       period: '2023 - Present',
-      description: 'Working as a backend developer using PHP with Symfony Framework to develop enterprise-level applications.',
+      description: 'Working as a backend developer using PHP with Symfony and Laravel to develop enterprise-level applications.',
       achievements: [
         'Contributed to large-scale enterprise applications',
-        'Implemented robust backend systems with Symfony Framework',
+        'Implemented robust backend systems with Symfony and Laravel',
         'Applied clean code principles and SOLID design patterns',
         'Worked with continuous integration and delivery pipelines'
       ],
-      technologies: ['PHP', 'Symfony Framework', 'MySQL', 'Docker', 'Redis', 'ElasticSearch', 'Grafana']
+      technologies: ['PHP', 'Symfony', 'Laravel', 'MySQL', 'Docker', 'Redis', 'ElasticSearch', 'Grafana']
     },
     {
       id: 2,

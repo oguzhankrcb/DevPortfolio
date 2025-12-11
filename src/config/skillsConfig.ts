@@ -16,9 +16,9 @@ export const skillsConfig = {
     { name: 'MySQL/MSSQL', percentage: 90 },
     { name: 'Symfony', percentage: 88 },
     { name: 'Unit Testing', percentage: 87 },
-    { name: 'Redis', percentage: 80 },
-    { name: 'Docker', percentage: 78 },
-    { name: 'ElasticSearch', percentage: 75 }
+    { name: 'Golang', percentage: 75 },
+    { name: 'Docker', percentage: 73 },
+    { name: 'ElasticSearch', percentage: 70 }
   ],
   
   otherSkills: [

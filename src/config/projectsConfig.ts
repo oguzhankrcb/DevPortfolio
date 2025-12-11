@@ -13,26 +13,44 @@ export const projectsConfig = {
   projects: [
     {
       id: 1,
+      title: 'DoktordanRandevu.Com',
+      description: 'A streamlined appointment management platform that connects patients with doctors, built with Laravel, Vue.js, Inertia, and Redis for fast and reliable performance.',
+      image: '/images/projects/doktordanrandevu.jpg',
+      demoUrl: 'https://doktordanrandevu.com',
+      githubUrl: '#',
+      category: 'fullstack',
+      technologies: [
+        'Laravel',
+        'Vue.js',
+        'Inertia.js',
+        'Redis',
+        'MySQL',
+        'Tailwind CSS',
+        'REST API'
+      ]
+    },
+    {
+      id: 2,
       title: 'DevPortfolio',
       description: 'A modern, fully customizable portfolio website built with Next.js and Tailwind CSS, featuring dynamic configuration, dark/light mode, and a modular design system.',
       image: '/images/projects/devportfolio.jpg', 
-      demoUrl: '#',
+      demoUrl: 'https://karacabay.com',
       githubUrl: 'https://github.com/oguzhankrcb/devportfolio',
       category: 'fullstack',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React', 'Responsive Design']
     },
     {
-      id: 2,
+      id: 3,
       title: 'OTI - One Time Information',
       description: 'A modern web application designed for secure, one-time information sharing with client-side encryption, self-destruct capabilities, and password protection.',
       image: '/images/projects/oti.jpg', 
-      demoUrl: '#',
+      demoUrl: 'https://oti.karacabay.com',
       githubUrl: 'https://github.com/oguzhankrcb/oti',
       category: 'fullstack',
       technologies: ['AdonisJS', 'TypeScript', 'Node.js', 'Redis', 'Client-Side Encryption', 'Vite']
     },
     {
-      id: 3,
+      id: 4,
       title: 'Symfony Microservice with gRPC',
       description: 'A Symfony-based microservice architecture leveraging gRPC for high-performance communication between services. Built with Docker for local development.',
       image: '/images/projects/symfony-grpc.jpg', 
@@ -42,7 +60,7 @@ export const projectsConfig = {
       technologies: ['Symfony', 'gRPC', 'Docker', 'Microservices', 'RoadRunner']
     },
     {
-      id: 4,
+      id: 5,
       title: 'DataMigrator Laravel Package',
       description: 'A PHP/Laravel package that helps you migrate data from one model to another with ease and flexibility.',
       image: '/images/projects/data-migrator.jpg', 
@@ -61,15 +79,5 @@ export const projectsConfig = {
       category: 'tool',
       technologies: ['PHP', 'Laravel', 'JSON Resources', 'API']
     },
-    {
-      id: 6,
-      title: 'GetirAPI Integration',
-      description: 'Getir API library integration for our restaurant programs, allowing seamless connection to the food delivery platform.',
-      image: '/images/projects/getir-api.jpg',
-      demoUrl: '#',
-      githubUrl: 'https://github.com/oguzhankrcb/GetirAPI',
-      category: 'laravel',
-      technologies: ['PHP', 'Laravel', 'API Integration', 'Restaurant Management']
-    }
   ]
 };
