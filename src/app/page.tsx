@@ -26,7 +26,7 @@ export default function Home() {
         const SectionComponent = section.component;
         return <SectionComponent key={section.id} isOdd={index % 2 === 0} />;
       })}
-      <Footer isOdd={sections.length % 2 === 0} />
+      <Footer />
     </main>
   );
 }

@@ -99,8 +99,8 @@ export default function ContactSection({ isOdd = false }: ContactSectionProps) {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white group-hover:text-blue-600 dark:text-blue-400 transition-colors duration-300">Email</h4>
-                    <a href={`mailto:${contactConfig.contactInfo.email.value}`} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:text-blue-400 transition-colors">
+                    <h4 className="font-semibold text-blue-400 transition-colors duration-300">Email</h4>
+                    <a href={`mailto:${contactConfig.contactInfo.email.value}`} className="text-gray-400 hover:text-blue-400 transition-colors">
                       {contactConfig.contactInfo.email.value}
                     </a>
                   </div>
@@ -118,8 +118,8 @@ export default function ContactSection({ isOdd = false }: ContactSectionProps) {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white group-hover:text-indigo-600 dark:text-indigo-400 transition-colors duration-300">Location</h4>
-                    <p className="text-gray-600 dark:text-gray-400">{contactConfig.contactInfo.location.value}</p>
+                    <h4 className="font-semibold text-indigo-400 transition-colors duration-300">Location</h4>
+                    <p className="text-gray-400">{contactConfig.contactInfo.location.value}</p>
                   </div>
                 </motion.div>
               </div>
@@ -223,7 +223,7 @@ export default function ContactSection({ isOdd = false }: ContactSectionProps) {
               
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Your Name
                   </label>
                   <input
@@ -239,7 +239,7 @@ export default function ContactSection({ isOdd = false }: ContactSectionProps) {
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                     Email Address
                   </label>
                   <input
@@ -255,7 +255,7 @@ export default function ContactSection({ isOdd = false }: ContactSectionProps) {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
                     Subject
                   </label>
                   <select
@@ -275,7 +275,7 @@ export default function ContactSection({ isOdd = false }: ContactSectionProps) {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                     Message
                   </label>
                   <textarea

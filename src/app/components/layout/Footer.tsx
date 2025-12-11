@@ -5,11 +5,9 @@ import { motion } from 'framer-motion';
 import { footerConfig, siteConfig } from '@/config';
 import { FooterLink } from '@/config/footerConfig';
 
-interface FooterProps {
-  isOdd?: boolean;
-}
 
-export default function Footer({ isOdd = true }: FooterProps) {
+
+export default function Footer() {
   const year = new Date().getFullYear();
   const copyrightText = footerConfig.copyright.text.replace('2025', year.toString());
 
@@ -26,9 +24,9 @@ export default function Footer({ isOdd = true }: FooterProps) {
   ];
 
   return (
-    <footer className={`relative overflow-hidden ${isOdd ? 'section-alt' : ''}`}>
+    <footer className="relative overflow-hidden bg-slate-950 text-slate-300">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent pointer-events-none" />
       
       <div className="container-custom relative z-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -39,7 +37,7 @@ export default function Footer({ isOdd = true }: FooterProps) {
                 Dev<span className="text-white">Portfolio</span>
               </span>
             </Link>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md leading-relaxed">
+            <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
               {siteConfig.description}
             </p>
             
@@ -108,9 +106,9 @@ export default function Footer({ isOdd = true }: FooterProps) {
                 <li key={link.href}>
                   <Link 
                     href={link.href} 
-                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
                   >
-                    <svg className="w-4 h-4 text-cyan-500/50 group-hover:text-blue-600 dark:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-cyan-500/50 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                     {link.label}
@@ -124,9 +122,9 @@ export default function Footer({ isOdd = true }: FooterProps) {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
                     >
-                      <svg className="w-4 h-4 text-cyan-500/50 group-hover:text-blue-600 dark:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-cyan-500/50 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                       {link.text}
@@ -134,9 +132,9 @@ export default function Footer({ isOdd = true }: FooterProps) {
                   ) : (
                     <Link
                       href={link.url}
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
                     >
-                      <svg className="w-4 h-4 text-cyan-500/50 group-hover:text-blue-600 dark:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-cyan-500/50 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                       {link.text}
@@ -154,22 +152,15 @@ export default function Footer({ isOdd = true }: FooterProps) {
               <li>
                 <a 
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="flex items-start gap-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:text-blue-400 transition-colors duration-300 group"
+                  className="flex items-start gap-3 text-gray-400 hover:text-blue-400 transition-colors duration-300 group"
                 >
-                  <svg className="w-5 h-5 text-cyan-500/50 group-hover:text-blue-600 dark:text-blue-400 transition-colors mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-cyan-500/50 group-hover:text-blue-400 transition-colors mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <span className="break-all">{siteConfig.contact.email}</span>
                 </a>
               </li>
-              {siteConfig.contact.phone && (
-                <li className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
-                  <svg className="w-5 h-5 text-violet-500/50 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span>{siteConfig.contact.phone}</span>
-                </li>
-              )}
+
             </ul>
           </div>
         </div>
@@ -190,7 +181,7 @@ export default function Footer({ isOdd = true }: FooterProps) {
             {footerConfig.backToTop.show && (
               <motion.a
                 href="#home"
-                className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:text-blue-400 transition-colors duration-300"
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300"
                 whileHover={{ y: -2 }}
               >
                 <span>{footerConfig.backToTop.text}</span>

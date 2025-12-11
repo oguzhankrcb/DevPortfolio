@@ -97,7 +97,7 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
           >
             {/* Greeting */}
             <motion.div variants={itemVariants} className="mb-4">
-              <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800">
+              <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-blue-900/30 text-blue-400 border border-blue-800">
                 {heroConfig.greeting}
               </span>
             </motion.div>
@@ -113,7 +113,7 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
             {/* Title with typing effect */}
             <motion.h2 
               variants={itemVariants}
-              className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 h-12 text-gray-700 dark:text-gray-200"
+              className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 h-12 text-gray-200"
             >
               <span>{typedText}</span>
               <span className="inline-block w-0.5 h-8 bg-blue-500 ml-1 animate-pulse" />
@@ -122,7 +122,7 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
             {/* Subtitle */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-xl leading-relaxed"
+              className="text-lg md:text-xl text-gray-400 mb-8 max-w-xl leading-relaxed"
             >
               {heroConfig.subtitle}
             </motion.p>
@@ -244,7 +244,7 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <span className="text-2xl">💻</span>
-                  <span className="ml-2 text-sm font-medium text-blue-600 dark:text-blue-400">5+ Years</span>
+                  <span className="ml-2 text-sm font-medium text-blue-400">5+ Years</span>
                 </motion.div>
 
                 <motion.div 
@@ -253,7 +253,7 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
                   transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 >
                   <span className="text-2xl">🚀</span>
-                  <span className="ml-2 text-sm font-medium text-indigo-600 dark:text-indigo-400">20+ Projects</span>
+                  <span className="ml-2 text-sm font-medium text-indigo-400">20+ Projects</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -267,7 +267,7 @@ export default function HeroSection({ isOdd = false }: HeroSectionProps) {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Link href="#about" className="flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors">
+        <Link href="#about" className="flex flex-col items-center gap-2 text-gray-400 hover:text-blue-500 transition-colors">
           <span className="text-sm font-medium">Scroll Down</span>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />

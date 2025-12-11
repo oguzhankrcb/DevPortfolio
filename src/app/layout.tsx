@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="dark scroll-smooth">
       <head>
         {metadata.title && <meta name="title" content={metadata.title.toString()} />}
         {metadata.description && <meta name="description" content={metadata.description.toString()} />}
