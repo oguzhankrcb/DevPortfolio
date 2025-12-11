@@ -27,6 +27,8 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   max-width: 100%;
+  color-scheme: dark only;
+  -webkit-color-scheme: dark only;
 }
 
 body {

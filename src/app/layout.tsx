@@ -17,7 +17,7 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  display: "swap",
+  display: "swap", 
 });
 
 export const metadata: Metadata = {
@@ -39,7 +39,14 @@ export default function RootLayout({
         {metadata.keywords && Array.isArray(metadata.keywords) && (
           <meta name="keywords" content={metadata.keywords.join(", ")} />
         )}
-        <meta name="theme-color" content="#3B82F6" />
+        {/* iOS color scheme - force dark mode, prevent auto-inversion */}
+        <meta name="color-scheme" content="dark" />
+        <meta name="supported-color-schemes" content="dark" />
+        <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#0f172a" />
+        {/* iOS Safari specific */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body
         className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans`}
