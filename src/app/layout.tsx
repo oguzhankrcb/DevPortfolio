@@ -21,8 +21,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio | Professional Web Developer",
-  description: "A professional developer portfolio showcasing skills, projects, and experience in web development and software engineering.",
+  title: "Karacabay.com | Professional Web Developer",
+  description: "A professional portfolio showcasing skills, projects, and experience in web development and software engineering.",
   keywords: ["developer", "portfolio", "web developer", "software engineer", "frontend", "backend", "fullstack", "react", "next.js"],
 };
 
