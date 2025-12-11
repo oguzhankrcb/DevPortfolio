@@ -44,7 +44,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="group">
             <span className="text-xl md:text-2xl font-bold gradient-text">
-              Dev<span className="text-white group-hover:text-blue-400 transition-colors duration-300">Portfolio</span>
+              Karacabay<span className="text-white group-hover:text-blue-400 transition-colors duration-300">.com</span>
             </span>
           </Link>
 

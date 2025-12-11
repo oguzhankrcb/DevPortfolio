@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <span className="text-2xl font-bold gradient-text">
-                Dev<span className="text-white">Portfolio</span>
+                Karacabay<span className="text-white">.com</span>
               </span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
