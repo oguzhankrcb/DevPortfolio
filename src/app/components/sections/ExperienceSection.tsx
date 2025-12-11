@@ -87,25 +87,25 @@ export default function ExperienceSection({ isOdd = true }: ExperienceSectionPro
                     {/* Header */}
                     <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-white group-hover:text-blue-600 dark:text-blue-400 transition-colors duration-300">
+                        <h3 className="text-xl font-bold text-blue-400 transition-colors duration-300">
                           {exp.position}
                         </h3>
-                        <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-1">{exp.company}</p>
+                        <p className="text-lg font-medium text-gray-300 mt-1">{exp.company}</p>
                         <div className="flex items-center text-sm text-slate-500 mt-2">
-                          <svg className="w-4 h-4 mr-2 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 mr-2 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
                           {exp.location}
                         </div>
                       </div>
-                      <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-gradient-to-r from-cyan-500/10 to-violet-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800">
+                      <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-gradient-to-r from-cyan-500/10 to-violet-500/10 text-blue-400 border border-blue-800">
                         {exp.period}
                       </span>
                     </div>
                     
                     {/* Description */}
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{exp.description}</p>
+                    <p className="text-gray-400 mb-4 leading-relaxed">{exp.description}</p>
                     
                     {/* Achievements */}
                     <div className="mb-4">
@@ -117,8 +117,8 @@ export default function ExperienceSection({ isOdd = true }: ExperienceSectionPro
                       </h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
-                            <svg className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <li key={i} className="flex items-start gap-3 text-gray-400">
+                            <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             {achievement}
@@ -132,7 +132,7 @@ export default function ExperienceSection({ isOdd = true }: ExperienceSectionPro
                       {exp.technologies.map(tech => (
                         <span 
                           key={tech} 
-                          className="px-3 py-1 rounded-lg text-xs font-medium bg-white/5 text-gray-600 dark:text-gray-400 border border-white/10"
+                          className="px-3 py-1 rounded-lg text-xs font-medium bg-white/5 text-gray-400 border border-white/10"
                         >
                           {tech}
                         </span>

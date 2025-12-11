@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  /* Design Tokens - Light Theme (Default) */
-  --foreground-rgb: 30, 41, 59; /* Slate 800 - Softer than pure black */
-  --background-start-rgb: 250, 250, 255; /* Very subtle cool white */
-  --background-end-rgb: 255, 255, 255;
+  /* Design Tokens - Dark Theme (Forced) */
+  --foreground-rgb: 248, 250, 252;
+  --background-start-rgb: 15, 23, 42; /* Slate 900 */
+  --background-end-rgb: 2, 6, 23;     /* Slate 950 */
   
   /* Primary Colors - Professional Blue/Indigo Palette */
   --primary: 59, 130, 246;   /* Blue 500 */
@@ -14,26 +14,13 @@
   --accent: 236, 72, 153;    /* Pink 500 */
   
   /* Glassmorphism Tokens */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-shadow: rgba(148, 163, 184, 0.1); 
-  --card-border: rgba(226, 232, 240, 0.8); /* Slate 200 */
+  --glass-bg: rgba(30, 41, 59, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
+  --card-border: rgba(255, 255, 255, 0.05);
 
   /* Spacing & Layout */
-  --section-spacing: 6rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 248, 250, 252;
-    --background-start-rgb: 15, 23, 42; /* Slate 900 */
-    --background-end-rgb: 2, 6, 23;     /* Slate 950 */
-    
-    --glass-bg: rgba(30, 41, 59, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-shadow: rgba(0, 0, 0, 0.4);
-    --card-border: rgba(255, 255, 255, 0.05);
-  }
+  --section-spacing: 5rem;
 }
 
 html {
@@ -129,11 +116,11 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Typography Utilities */
   .heading-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400 font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight;
   }
 
   .subheading {
-    @apply text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-light;
+    @apply text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light;
   }
 
   /* Buttons - Polished */
@@ -154,11 +141,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .btn-secondary {
-    @apply bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-sm;
+    @apply bg-slate-800 text-slate-200 border border-slate-700 shadow-sm;
   }
 
   .btn-secondary:hover {
-    @apply bg-slate-50 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white -translate-y-0.5;
+    @apply bg-slate-700 border-slate-600 text-white -translate-y-0.5;
   }
 
   /* Utilities */
@@ -167,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .section {
-    @apply py-24 md:py-32 relative;
+    @apply py-16 md:py-24 relative;
   }
 
   .section-alt {
@@ -176,37 +163,31 @@ h1, h2, h3, h4, h5, h6 {
   
   .section-alt::before {
     content: '';
-    @apply absolute inset-0 -z-20 bg-slate-50/50 dark:bg-slate-900/50 skew-y-1 scale-110;
+    @apply absolute inset-0 -z-20 bg-slate-900/30;
   }
 
-  /* Gradient Text Utility */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 font-bold;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400 font-bold;
   }
   
-  /* Input Fields */
   .input-modern {
-    @apply w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all duration-300 backdrop-blur-sm;
+    @apply w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all duration-300 backdrop-blur-sm;
   }
 
-  /* Social Icons */
   .social-icon {
-    @apply w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300;
+    @apply w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-blue-900/30 hover:text-blue-400 transition-all duration-300;
   }
   
-  /* Skill Bar */
   .skill-bar {
-    @apply h-2.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden;
+    @apply h-2.5 w-full bg-slate-700 rounded-full overflow-hidden;
   }
   
-  /* Tags */
   .tag {
-    @apply px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800/50;
+    @apply px-3 py-1 rounded-full text-xs font-semibold bg-blue-900/20 text-blue-400 border border-blue-800/50;
   }
   
-  /* Navigation Link */
   .nav-link {
-    @apply text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200;
+    @apply text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors duration-200;
   }
 }
 

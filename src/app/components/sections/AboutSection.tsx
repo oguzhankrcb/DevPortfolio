@@ -76,7 +76,7 @@ export default function AboutSection({ isOdd = true }: AboutSectionProps) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 mb-4">
+          <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-blue-900/30 text-blue-400 border border-blue-800 mb-4">
             About Me
           </span>
           <h2 className="heading-gradient">{aboutConfig.title}</h2>
@@ -94,11 +94,11 @@ export default function AboutSection({ isOdd = true }: AboutSectionProps) {
             transition={{ duration: 0.8 }}
           >
             <div className="modern-card p-8 lg:p-10 h-full flex flex-col">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-white">
                 <span className="w-2 h-8 rounded-full bg-gradient-to-b from-blue-500 to-indigo-600" />
                 Get to know me!
               </h3>
-              <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+              <div className="space-y-4 text-gray-300 leading-relaxed">
                 {aboutConfig.mainContent.map((paragraph, index) => (
                   <p key={index} dangerouslySetInnerHTML={{ __html: paragraph.replace(/<strong>/g, '<strong class="text-white font-semibold">') }} />
                 ))}
@@ -124,7 +124,7 @@ export default function AboutSection({ isOdd = true }: AboutSectionProps) {
             viewport={{ once: true, margin: "-100px" }}
           >
             <div className="modern-card p-8 lg:p-10 h-full">
-              <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 text-white">
                 <span className="w-2 h-8 rounded-full bg-gradient-to-b from-blue-500 to-indigo-600" />
                 <span className="gradient-text">Achievements & Qualifications</span>
               </h3>
@@ -154,10 +154,10 @@ export default function AboutSection({ isOdd = true }: AboutSectionProps) {
                         <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${gradientClass} blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300`} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                        <h4 className="font-bold text-lg text-white group-hover:text-blue-400 transition-colors duration-300">
                           {achievement.title}
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-400 mt-1">
+                        <p className="text-gray-400 mt-1">
                           {achievement.description}
                         </p>
                       </div>

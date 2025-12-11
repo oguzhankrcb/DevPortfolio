@@ -44,7 +44,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="group">
             <span className="text-xl md:text-2xl font-bold gradient-text">
-              Dev<span className="text-white group-hover:text-blue-600 dark:text-blue-400 transition-colors duration-300">Portfolio</span>
+              Dev<span className="text-white group-hover:text-blue-400 transition-colors duration-300">Portfolio</span>
             </span>
           </Link>
 
@@ -113,7 +113,7 @@ export default function Navbar() {
                 >
                   <Link 
                     href={item.href} 
-                    className="text-xl font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:text-blue-400 transition-colors py-3 px-6"
+                    className="text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors py-3 px-6"
                     onClick={toggleMobileMenu}
                   >
                     {item.label}

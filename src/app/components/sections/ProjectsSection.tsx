@@ -32,7 +32,7 @@ function ImageWithFallback({ imageUrl, title }: { imageUrl: string, title: strin
       <div className="relative h-56 w-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-violet-500/20 flex items-center justify-center">
-            <svg className="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
@@ -110,7 +110,7 @@ export default function ProjectsSection({ isOdd = false }: ProjectsSectionProps)
   };
 
   return (
-    <section id="projects" className={`section ${isOdd ? 'section-alt' : ''}`}>
+    <section id="projects" className={`section pb-24 md:pb-32 ${isOdd ? 'section-alt' : ''}`}>
       <div className="container-custom">
         {/* Section Header */}
         <motion.div 
@@ -120,7 +120,7 @@ export default function ProjectsSection({ isOdd = false }: ProjectsSectionProps)
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 border border-pink-500/20 mb-4">
+          <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-rose-900/30 text-rose-400 border border-pink-500/20 mb-4">
             Portfolio
           </span>
           <h2 className="heading-gradient">{projectsConfig.title}</h2>
@@ -145,7 +145,7 @@ export default function ProjectsSection({ isOdd = false }: ProjectsSectionProps)
                 className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
                   filter === category.id
                     ? 'bg-gradient-to-r from-cyan-500 to-violet-500 text-white shadow-lg shadow-cyan-500/25'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-white hover:bg-white/10'
+                    : 'text-gray-400 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {category.name}
@@ -185,10 +185,10 @@ export default function ProjectsSection({ isOdd = false }: ProjectsSectionProps)
                 
                 {/* Project Content */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold mb-2 text-white group-hover:text-blue-600 dark:text-blue-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold mb-2 text-blue-400 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                  <p className="text-gray-400 mb-4 line-clamp-3">
                     {project.description}
                   </p>
                   
