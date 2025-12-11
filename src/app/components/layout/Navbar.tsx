@@ -32,6 +32,7 @@ export default function Navbar() {
   ].filter(item => item.visible);
 
   return (
+    <>
     <header 
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled 
@@ -92,54 +93,55 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            className="md:hidden fixed inset-0 top-[72px] bg-slate-950/95 backdrop-blur-xl z-50"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <nav className="flex flex-col items-center gap-2 p-8">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Link 
-                    href={item.href} 
-                    className="text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors py-3 px-6"
-                    onClick={toggleMobileMenu}
-                  >
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
-              {siteConfig.resumeUrl && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: navItems.length * 0.1 }}
-                  className="mt-4"
-                >
-                  <Link 
-                    href={siteConfig.resumeUrl} 
-                    className="btn btn-primary w-full px-8"
-                    onClick={toggleMobileMenu}
-                  >
-                    Resume
-                  </Link>
-                </motion.div>
-              )}
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
+
+    {/* Mobile Navigation - Outside header to avoid backdrop-filter issues */}
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <motion.div
+          className="md:hidden fixed inset-0 top-[72px] bg-slate-950/95 backdrop-blur-xl z-[60]"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+        >
+          <nav className="flex flex-col items-center gap-2 p-8">
+            {navItems.map((item, index) => (
+              <motion.div
+                key={item.href}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Link 
+                  href={item.href} 
+                  className="text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors py-3 px-6"
+                  onClick={toggleMobileMenu}
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
+            ))}
+            {siteConfig.resumeUrl && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
+                className="mt-4"
+              >
+                <Link 
+                  href={siteConfig.resumeUrl} 
+                  className="btn btn-primary w-full px-8"
+                  onClick={toggleMobileMenu}
+                >
+                  Resume
+                </Link>
+              </motion.div>
+            )}
+          </nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </>
   );
 }
