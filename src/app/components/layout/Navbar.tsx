@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import siteConfig from '@/config/site';
 
 export default function Navbar() {
@@ -10,11 +11,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -25,48 +22,45 @@ export default function Navbar() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const navItems = [
+    { href: '#home', label: 'Home', visible: siteConfig.sections.hero },
+    { href: '#about', label: 'About', visible: siteConfig.sections.about },
+    { href: '#skills', label: 'Skills', visible: siteConfig.sections.skills },
+    { href: '#projects', label: 'Projects', visible: siteConfig.sections.projects },
+    { href: '#experience', label: 'Experience', visible: siteConfig.sections.experience },
+    { href: '#contact', label: 'Contact', visible: siteConfig.sections.contact },
+  ].filter(item => item.visible);
+
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
+    <header 
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'glass-card !rounded-none border-x-0 border-t-0' 
+          : 'bg-transparent'
+      }`}
+    >
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
-          <Link href="/" className="text-xl md:text-2xl font-bold">
-            DevPortfolio
+          {/* Logo */}
+          <Link href="/" className="group">
+            <span className="text-xl md:text-2xl font-bold gradient-text">
+              Dev<span className="text-white group-hover:text-blue-600 dark:text-blue-400 transition-colors duration-300">Portfolio</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {siteConfig.sections.hero && (
-              <Link href="#home" className="font-medium hover:text-blue-500 transition-colors">
-                Home
+          <nav className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
+              <Link 
+                key={item.href}
+                href={item.href} 
+                className="nav-link px-4"
+              >
+                {item.label}
               </Link>
-            )}
-            {siteConfig.sections.about && (
-              <Link href="#about" className="font-medium hover:text-blue-500 transition-colors">
-                About
-              </Link>
-            )}
-            {siteConfig.sections.skills && (
-              <Link href="#skills" className="font-medium hover:text-blue-500 transition-colors">
-                Skills
-              </Link>
-            )}
-            {siteConfig.sections.projects && (
-              <Link href="#projects" className="font-medium hover:text-blue-500 transition-colors">
-                Projects
-              </Link>
-            )}
-            {siteConfig.sections.experience && (
-              <Link href="#experience" className="font-medium hover:text-blue-500 transition-colors">
-                Experience
-              </Link>
-            )}
-            {siteConfig.sections.contact && (
-              <Link href="#contact" className="font-medium hover:text-blue-500 transition-colors">
-                Contact
-              </Link>
-            )}
+            ))}
             {siteConfig.resumeUrl && (
-              <Link href={siteConfig.resumeUrl} className="btn btn-primary">
+              <Link href={siteConfig.resumeUrl} className="ml-4 btn btn-primary py-2 px-5 text-sm">
                 Resume
               </Link>
             )}
@@ -74,96 +68,78 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-2xl"
+            className="md:hidden relative w-10 h-10 flex items-center justify-center modern-card !p-0"
             onClick={toggleMobileMenu}
             aria-label="Toggle Menu"
           >
-            {isMobileMenuOpen ? '✕' : '☰'}
+            <div className="w-5 h-4 relative flex flex-col justify-between">
+              <span 
+                className={`w-full h-0.5 bg-white rounded-full transform transition-all duration-300 ${
+                  isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+                }`} 
+              />
+              <span 
+                className={`w-full h-0.5 bg-white rounded-full transition-all duration-300 ${
+                  isMobileMenuOpen ? 'opacity-0' : ''
+                }`} 
+              />
+              <span 
+                className={`w-full h-0.5 bg-white rounded-full transform transition-all duration-300 ${
+                  isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+                }`} 
+              />
+            </div>
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <div
-        className={`md:hidden fixed inset-0 bg-white dark:bg-slate-900 z-50 transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
-        }`}
-      >
-        <div className="flex justify-end p-6">
-          <button
-            className="text-2xl"
-            onClick={toggleMobileMenu}
-            aria-label="Close Menu"
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="md:hidden fixed inset-0 top-[72px] bg-slate-950/95 backdrop-blur-xl z-50"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
           >
-            ✕
-          </button>
-        </div>
-        <nav className="flex flex-col items-center gap-6 p-8">
-          {siteConfig.sections.hero && (
-            <Link 
-              href="#home" 
-              className="text-xl font-medium hover:text-blue-500 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              Home
-            </Link>
-          )}
-          {siteConfig.sections.about && (
-            <Link 
-              href="#about" 
-              className="text-xl font-medium hover:text-blue-500 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              About
-            </Link>
-          )}
-          {siteConfig.sections.skills && (
-            <Link 
-              href="#skills" 
-              className="text-xl font-medium hover:text-blue-500 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              Skills
-            </Link>
-          )}
-          {siteConfig.sections.projects && (
-            <Link 
-              href="#projects" 
-              className="text-xl font-medium hover:text-blue-500 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              Projects
-            </Link>
-          )}
-          {siteConfig.sections.experience && (
-            <Link 
-              href="#experience" 
-              className="text-xl font-medium hover:text-blue-500 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              Experience
-            </Link>
-          )}
-          {siteConfig.sections.contact && (
-            <Link 
-              href="#contact" 
-              className="text-xl font-medium hover:text-blue-500 transition-colors"
-              onClick={toggleMobileMenu}
-            >
-              Contact
-            </Link>
-          )}
-          {siteConfig.resumeUrl && (
-            <Link 
-              href={siteConfig.resumeUrl} 
-              className="btn btn-primary w-full text-center"
-              onClick={toggleMobileMenu}
-            >
-              Resume
-            </Link>
-          )}
-        </nav>
-      </div>
+            <nav className="flex flex-col items-center gap-2 p-8">
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link 
+                    href={item.href} 
+                    className="text-xl font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:text-blue-400 transition-colors py-3 px-6"
+                    onClick={toggleMobileMenu}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+              {siteConfig.resumeUrl && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: navItems.length * 0.1 }}
+                  className="mt-4"
+                >
+                  <Link 
+                    href={siteConfig.resumeUrl} 
+                    className="btn btn-primary w-full px-8"
+                    onClick={toggleMobileMenu}
+                  >
+                    Resume
+                  </Link>
+                </motion.div>
+              )}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
