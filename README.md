@@ -6,6 +6,8 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-38bdf8.svg)](https://tailwindcss.com/)
 
+[![Live 🔗](https://img.shields.io/badge/Live-karacabay.com-blue?style=for-the-badge&logo=linktree&logoColor=white)](https://karacabay.com)
+
 ## ✨ Features
 
 DevPortfolio is a modern, fully customizable portfolio website built with Next.js and Tailwind CSS. It's designed to help developers showcase their skills, projects, and experience in a clean and professional way.
